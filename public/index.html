@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Skill Shelf · 技能精选</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+  <header class="topbar"><a class="brand" href="/" aria-label="Skill Shelf 首页"><span class="brand-icon">S</span>Skill Shelf <span class="preview">LOCAL BETA</span></a><div class="connection"><i></i>本地工作台 <span>· Codex</span></div></header>
+  <main>
+    <section class="intro"><div><div class="eyebrow">A LITTLE SKILL. A BIG DIFFERENCE.</div><h1>让好技能，触手可及<span>。</span></h1><p>发现、整理和安装适合你的 Codex 技能，从一次更好的工作开始。</p></div><button id="sync" class="outline">↻ 同步技能来源</button></section>
+    <section class="toolbar"><nav aria-label="技能视图"><button data-tab="market" class="tab active">市场精选 <span id="market-count">0</span></button><button data-tab="local" class="tab">我的技能 <span id="local-count">0</span></button><button data-tab="favorites" class="tab">我的收藏 <span id="favorite-count">0</span></button></nav><div class="tools"><label class="search"><span>⌕</span><input id="search" placeholder="搜索名称、用途、标签…" aria-label="搜索技能"><kbd>/</kbd></label><button id="import" class="primary">＋ 导入技能</button></div></section>
+    <div class="github-entry"><button data-tab="github" class="outline">⌘ GitHub 实时搜索</button><span>直接发现 GitHub 上的技能，阅读作者介绍后加入书架。</span></div>
+    <section id="github-panel" hidden><form id="github-search-form" class="github-search"><label for="github-query">搜索 GitHub 技能</label><div><input id="github-query" placeholder="例如：PDF、分镜、browser、data analysis" required maxlength="140"><button class="primary" type="submit">搜索 GitHub</button></div></form><div id="github-meta" class="muted small">公开仓库搜索无需登录。搜索结果不会自动安装。</div><div id="github-repositories"></div><button id="github-next" class="outline" hidden>下一页相关仓库</button></section>
+    <div id="categories" class="categories" aria-label="技能分类"></div>
+    <section class="results-bar"><div><strong id="section-title">为你的工作，找到合适的技能</strong><span id="result-count"></span></div><select id="sort" aria-label="排序方式"><option value="default">默认排序</option><option value="name">名称排序</option><option value="category">分类排序</option></select></section>
+    <div id="notice" class="notice" hidden></div><section id="grid" class="grid" aria-label="技能列表"><div class="empty">正在读取本地技能…</div></section>
+    <footer><span><span class="footer-dot">●</span> 本地优先 · 不需要登录</span><span id="sync-time">目录未同步</span><button id="help">安装与验证说明 ↗</button></footer>
+  </main>
+  <dialog id="detail"><div class="dialog-top"><span class="eyebrow">SKILL DETAILS</span><button class="close" aria-label="关闭">×</button></div><div id="detail-content"></div></dialog>
+  <dialog id="import-dialog"><div class="dialog-top"><span class="eyebrow">ADD TO YOUR SHELF</span><button class="close" aria-label="关闭">×</button></div><h2>导入 GitHub 技能</h2><p class="muted">粘贴单个技能目录链接。导入只加入目录，安装前仍会显示文件预览。</p><form id="import-form"><label>技能目录链接<input id="source-url" type="url" required placeholder="https://github.com/作者/仓库/tree/main/技能目录"></label><p class="muted small">仅支持公开仓库。含斜杠的分支请改用 commit SHA。说明内容不会被执行。</p><button class="primary" type="submit">检查并导入</button></form></dialog>
+  <dialog id="confirm-dialog"><div class="dialog-top"><span class="eyebrow">CONFIRM ACTION</span><button class="close" aria-label="关闭">×</button></div><h2 id="confirm-title"></h2><p id="confirm-text"></p><div class="actions"><button id="confirm-cancel" class="outline">取消</button><button id="confirm-ok" class="primary">确认</button></div></dialog>
+  <div id="toast" role="status" aria-live="polite" hidden></div><script type="module" src="/app.js"></script>
+</body></html>

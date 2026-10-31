@@ -1,0 +1,9 @@
+{
+  "name": "skill-shelf",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Local-first Codex skill catalog and manager",
+  "scripts": { "start": "node server.mjs", "test": "node --test tests/*.test.mjs", "sync": "node scripts/sync.mjs" },
+  "engines": { "node": ">=22" }
+}

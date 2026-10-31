@@ -1,0 +1,6 @@
+{
+  "name": "skill-shelf",
+  "version": "0.2.0",
+  "description": "Discover GitHub skills, read authors' introductions and collect skills locally.",
+  "skills": "./skills/"
+}
